@@ -47,4 +47,36 @@
             <div class="artist-card"><div class="artist-name">Sleep (Oldominion)</div><button class="book-btn" onclick="openForm('Sleep')">Book Now</button></div>
             <div class="artist-card"><div class="artist-name">Chuck D (Public Enemy)</div><button class="book-btn" onclick="openForm('Chuck D')">Book Now</button></div>
             <div class="artist-card"><div class="artist-name">Ice-T</div><button class="book-btn" onclick="openForm('Ice-T')">Book Now</button></div>
-            <
+            <div class="artist-card"><div class="artist-name">Freddie Gibbs</div><button class="book-btn" onclick="openForm('Freddie Gibbs')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Andre Nickatina</div><button class="book-btn" onclick="openForm('Andre Nickatina')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Rappin’ 4-Tay</div><button class="book-btn" onclick="openForm('Rappin 4-Tay')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Celly Cel</div><button class="book-btn" onclick="openForm('Celly Cel')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">IAMSU!</div><button class="book-btn" onclick="openForm('IAMSU!')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Berner</div><button class="book-btn" onclick="openForm('Berner')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Necro</div><button class="book-btn" onclick="openForm('Necro')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Vinnie Paz (Jedi Mind Tricks)</div><button class="book-btn" onclick="openForm('Vinnie Paz')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Ill Bill</div><button class="book-btn" onclick="openForm('Ill Bill')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">King Lil G</div><button class="book-btn" onclick="openForm('King Lil G')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">¡Mayday!</div><button class="book-btn" onclick="openForm('Mayday')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Mistah F.A.B.</div><button class="book-btn" onclick="openForm('Mistah FAB')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Suga Free</div><button class="book-btn" onclick="openForm('Suga Free')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Afroman</div><button class="book-btn" onclick="openForm('Afroman')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Snoop Dogg</div><button class="book-btn" onclick="openForm('Snoop Dogg')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">E-40</div><button class="book-btn" onclick="openForm('E-40')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Bizzy Bone</div><button class="book-btn" onclick="openForm('Bizzy Bone')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Krayzie Bone</div><button class="book-btn" onclick="openForm('Krayzie Bone')">Book Now</button></div>
+            <div class="artist-card"><div class="artist-name">Layzie Bone</div><button class="book-btn" onclick="openForm('Layzie Bone')">Book Now</button></div>
+            <!-- Add more if I missed any — you have 60+ legends here! -->
+        </div>
+    </div>
+
+    <footer>© 2025 HW Entertainment LLC | Direct booking, no middleman fees | Contact: your email or phone</footer>
+
+    <script>
+        function openForm(artist) {
+            const message = encodeURIComponent(`I'm interested in booking ${artist}. Please send availability and exact quote.`);
+            window.open(`mailto:YOUR-EMAIL@gmail.com?subject=Booking Request - ${artist}&body=${message} Name: %0AEmail: %0APhone: %0ABudget: %0ADate Needed: %0AMessage:`);
+        }
+    </script>
+</body>
+</html>
