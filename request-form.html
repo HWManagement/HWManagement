@@ -12,16 +12,24 @@
         .subheader { text-align:center; font-family:'Bebas Neue',cursive; font-size:1.8rem; color:#ff0; margin-bottom:60px; }
         .form-group { margin-bottom:35px; text-align:left; }
         .form-group label { display:block; font-size:1.4rem; color:#ff0000; margin-bottom:10px; font-weight:bold; }
-        .form-group input, .form-group select, .form-group textarea { width:100%; padding:15px; font-size:1.2rem; border:2px solid #333; border-radius:8px; background:#111; color:#fff; font-family:inherit; box-sizing:border-box; }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline:none; border-color:#ff0000; box-shadow:0 0 12px rgba(255,0,0,0.4); }
+        .form-group input, .form-group select { width:100%; padding:15px; font-size:1.2rem; border:2px solid #333; border-radius:8px; background:#111; color:#fff; box-sizing:border-box; font-family:inherit; }
+        .form-group input:focus, .form-group select:focus { outline:none; border-color:#ff0000; box-shadow:0 0 12px rgba(255,0,0,0.4); }
         .checkbox-container { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; margin:25px 0; }
         .checkbox-item { display:flex; align-items:center; font-size:1.4rem; white-space:nowrap; }
         .checkbox-item input[type="checkbox"] { width:24px; height:24px; margin-right:12px; accent-color:#ff0000; }
         .submit-btn { background:linear-gradient(45deg,#ff0000,#ff6600); color:white; border:none; padding:20px 60px; font-size:1.8rem; font-family:'Orbitron',sans-serif; font-weight:900; border-radius:50px; cursor:pointer; width:100%; margin-top:40px; box-shadow:0 0 30px rgba(255,0,0,0.5); transition:all .3s; }
         .submit-btn:hover { transform:scale(1.05); box-shadow:0 0 50px rgba(255,0,0,0.8); }
+        .submit-btn:disabled { opacity:0.6; cursor:not-allowed; }
         .back-link { display:block; margin-top:50px; text-align:center; color:#ff0; font-size:1.3rem; text-decoration:none; }
         .back-link:hover { color:#fff; }
-        @media (max-width:768px) { .header{font-size:2.5rem;} .subheader{font-size:1.4rem;} .checkbox-container { flex-direction:column; align-items:flex-start; } }
+        /* Success overlay */
+        .success-overlay { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.95); display:none; z-index:9999; }
+        .success-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
+        .success-h1 { font-family:'Orbitron',sans-serif; font-size:4.5rem; color:#ff0000; text-shadow:0 0 30px #ff0000; margin:0; }
+        .success-p { font-family:'Bebas Neue',cursive; font-size:2rem; color:#ff0; margin:40px 0; }
+        .success-back { color:#ff0; font-size:1.4rem; text-decoration:none; }
+        .success-back:hover { color:#fff; }
+        @media (max-width:768px) { .header{font-size:2.5rem;} .subheader{font-size:1.4rem;} .checkbox-container { flex-direction:column; align-items:flex-start; } .success-h1{font-size:3rem;} .success-p{font-size:1.6rem;} }
     </style>
 </head>
 <body>
@@ -29,8 +37,7 @@
         <h1 class="header">HW Entertainment Request Form</h1>
         <p class="subheader">Please feel free to fill out our entertainment request form below and we will contact you to see how we can assist you.</p>
 
-        <form action="https://formspree.io/f/xnnevzwa" method="POST" id="bookingForm">
-           <input type="hidden" name="_next" value="https://hwmanagement.github.io/HWManagement/thanks.html" />
+        <form id="bookingForm">
             <div class="form-group">
                 <label for="firstName">First Name *</label>
                 <input type="text" id="firstName" name="First Name" required>
@@ -87,7 +94,7 @@
                     <option value="Ice-T">Ice-T 📌</option>
                     <option value="Freddie Gibbs">Freddie Gibbs</option>
                     <option value="Andre Nickatina">Andre Nickatina</option>
-                    <option value="Rappin’ 4-Tay">Rappin’ 4-Tay 📌</option>
+                    <option value="Rappin' 4-Tay">Rappin' 4-Tay 📌</option>
                     <option value="Celly Cel">Celly Cel 📌</option>
                     <option value="IAMSU!">IAMSU 📌</option>
                     <option value="Berner">Berner 📌</option>
@@ -151,12 +158,69 @@
         </form>
         <a href="index.html" class="back-link">← Back to Roster</a>
     </div>
+
+    <!-- Success overlay (your branded thank-you) -->
+    <div class="success-overlay" id="successOverlay">
+        <div class="success-content">
+            <h1 class="success-h1">THANK YOU</h1>
+            <p class="success-p">We just received your request.<br>One of our team members will hit you back within 24 hours<br>with availability and exclusive pricing.</p>
+            <a href="index.html" class="success-back">← Back to Roster</a>
+        </div>
+    </div>
+
     <script>
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            if (document.querySelectorAll('input[name="Service"]:checked').length === 0) {
-                e.preventDefault();
+        const form = document.getElementById('bookingForm');
+        const submitBtn = form.querySelector('.submit-btn');
+        const overlay = document.getElementById('successOverlay');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+
+            // Validation
+            const services = document.querySelectorAll('input[name="Service"]:checked');
+            if (services.length === 0) {
                 alert('Please select at least one service type.');
+                return;
             }
+
+            // Disable button & show loading
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SENDING...';
+
+            // Collect data
+            const formData = new FormData(form);
+
+            // Submit via AJAX
+            fetch('https://formspree.io/f/xnnevzwa', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Success: Show overlay
+                    overlay.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scroll
+                } else {
+                    alert('Something went wrong. Try again or email us directly.');
+                }
+            })
+            .catch(error => {
+                alert('Network error. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'SUBMIT REQUEST';
+            });
+        });
+
+        // Close overlay on click (optional)
+        overlay.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>
