@@ -47,6 +47,8 @@
             cursor: pointer;
             box-shadow: 0 0 40px #ff0000;
             transition: all 0.4s;
+            text-decoration: none;
+            display: inline-block;
         }
         .inquire-btn:hover {
             transform: scale(1.1);
@@ -72,22 +74,16 @@
         HERMAN WATSON • ATMOSPHERE • B-REAL (CYPRESS HILL) • BABY BASH<br>
         THE D.O.C. • SAGE FRANCIS • INSPECTAH DECK • RICK ROSS<br>
         CROOKED I • TALIB KWELI • RITTZ • YUKMOUTH • RA THE RUGGED MAN<br>
-        CHUCK D • ICE-T • FREDDIE GIBBS • ANDRE NICKATINA • RAPPIN’ 4-TAY<br>
+        CHUCK D • ICE-T • FREDDIE GIBBS • ANDRE NICKATINA • RAPPIN' 4-TAY<br>
         CELLY CEL • IAMSU! • BERNER • NECRO • VINNIE PAZ • ILL BILL<br>
         KING LIL G • MISTAH F.A.B. • SUGA FREE • AFROMAN • SNOOP DOGG<br>
         E-40 • BIZZY BONE • KRAYZIE BONE • LAYZIE BONE • KOKANE<br>
         REVERIE • THE GROUCH • MURS • CESCHI • DRU DOWN • + MANY MORE
     </div>
 
-    <button class="inquire-btn" onclick="openForm()">INQUIRE HERE</button>
+    <a href="request-form.html" class="inquire-btn">INQUIRE HERE</a>
 
     <footer>© 2025 HW Entertainment LLC — Direct Access Only</footer>
 
-    <script>
-        function openForm() {
-            const body = encodeURIComponent(`Hey HW Entertainment,\n\nI'm interested in booking one or more artists from your roster.\nPlease send rates + availability.\n\nName:\nPhone/Email:\nDesired Artist(s):\nEvent Date/Location:\nBudget:\nMessage:`);
-            window.open(`mailto:YOUR-EMAIL@gmail.com?subject=Artist Booking Inquiry&body=${body}`);
-        }
-    </script>
 </body>
 </html>
