@@ -9,36 +9,38 @@
         body { margin:0; padding:0; background:#000; color:#fff; text-align:center; overflow-x:hidden; }
         header { 
             background: linear-gradient(45deg, #ff0000, #000, #ff0000);
-            padding: 60px 20px;
+            padding: 80px 20px 60px;
             font-family: 'Monoton', cursive;
-            font-size: 4.5rem;
-            letter-spacing: 8px;
+            font-size: 12vw;            /* scales perfectly on every phone */
+            letter-spacing: 6px;
             text-shadow: 0 0 30px #ff0000;
+            line-height: 1.1;
+            min-height: 220px;
         }
         .subtitle {
             font-family: 'Bebas Neue', cursive;
-            font-size: 2rem;
-            margin: 30px 0;
+            font-size: 6.5vw;
+            margin: 40px 20px 20px;
             color: #ff0;
         }
         .artist-list {
             font-family: 'Russo One', sans-serif;
-            font-size: 2.8rem;
-            line-height: 1.6;
-            max-width: 900px;
+            font-size: 6.5vw;             /* huge & 7vw on bigger phones */
+            line-height: 1.7;
+            max-width: 95%;
             margin: 60px auto;
             padding: 0 20px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             background: linear-gradient(to right, #ff0000, #fff, #ff0000);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
         .inquire-btn {
-            margin: 80px auto;
-            padding: 25px 80px;
+            margin: 80px auto 100px;
+            padding: 22px 70px;
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 7.5vw;
             font-weight: 900;
             color: #000;
             background: #ff0000;
@@ -51,16 +53,19 @@
             display: inline-block;
         }
         .inquire-btn:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
             box-shadow: 0 0 80px #ff0000;
             background: #fff;
             color: #ff0000;
         }
-        footer { padding:50px; font-size:1rem; opacity:0.7; }
-        @media (max-width:768px) {
-            header { font-size:2.8rem; }
-            .artist-list { font-size:1.8rem; }
-            .inquire-btn { font-size:1.8rem; padding:20px 60px; }
+        footer { padding:60px 20px; font-size:1rem; opacity:0.7; }
+
+        /* Desktop tweaks – keeps it huge & sexy on big screens */
+        @media (min-width: 768px) {
+            header { font-size: 5.5rem; padding: 100px 20px; }
+            .subtitle { font-size: 2.5rem; }
+            .artist-list { font-size: 3.2rem; }
+            .inquire-btn { font-size: 2.8rem; padding: 28px 90px; }
         }
     </style>
 </head>
@@ -74,7 +79,7 @@
         HERMAN WATSON • ATMOSPHERE • B-REAL (CYPRESS HILL) • BABY BASH<br>
         THE D.O.C. • SAGE FRANCIS • INSPECTAH DECK • RICK ROSS<br>
         CROOKED I • TALIB KWELI • RITTZ • YUKMOUTH • RA THE RUGGED MAN<br>
-        CHUCK D • ICE-T • FREDDIE GIBBS • ANDRE NICKATINA • RAPPIN' 4-TAY<br>
+        CHUCK D • ICE-T • FREDDIE GIBBS • ANDRE NICKATINA • RAPPIN’ 4-TAY<br>
         CELLY CEL • IAMSU! • BERNER • NECRO • VINNIE PAZ • ILL BILL<br>
         KING LIL G • MISTAH F.A.B. • SUGA FREE • AFROMAN • SNOOP DOGG<br>
         E-40 • BIZZY BONE • KRAYZIE BONE • LAYZIE BONE • KOKANE<br>
