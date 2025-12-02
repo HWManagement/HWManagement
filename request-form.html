@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW Entertainment Request Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Bebas+Neue&family=Russo+One&display=swap" rel="stylesheet">
+    <style>
+        body { 
+            margin: 0; padding: 0; 
+            background: linear-gradient(135deg, #000 0%, #111 100%); 
+            color: #fff; 
+            font-family: 'Russo One', sans-serif; 
+        }
+        .container { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+        }
+        .header { 
+            text-align: center; 
+            font-family: 'Orbitron', sans-serif; 
+            font-size: 3.5rem; 
+            color: #ff0000; 
+            margin-bottom: 10px; 
+            text-shadow: 0 0 20px #ff0000; 
+        }
+        .subheader { 
+            text-align: center; 
+            font-family: 'Bebas Neue', cursive; 
+            font-size: 1.8rem; 
+            color: #ff0; 
+            margin-bottom: 60px; 
+        }
+        .form-group { 
+            margin-bottom: 30px; 
+            text-align: left; 
+        }
+        .form-group label { 
+            display: block; 
+            font-size: 1.4rem; 
+            color: #ff0000; 
+            margin-bottom: 8px; 
+            font-weight: bold; 
+        }
+        .form-group input, .form-group select, .form-group textarea { 
+            width: 100%; 
+            padding: 15px; 
+            font-size: 1.2rem; 
+            border: 2px solid #333; 
+            border-radius: 8px; 
+            background: #111; 
+            color: #fff; 
+            font-family: inherit; 
+            box-sizing: border-box; 
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+            outline: none; 
+            border-color: #ff0000; 
+            box-shadow: 0 0 10px rgba(255,0,0,0.3); 
+        }
+        .checkbox-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            margin: 20px 0; 
+        }
+        .checkbox-item { 
+            display: flex; 
+            align-items: center; 
+            font-size: 1.2rem; 
+            color: #fff; 
+        }
+        .checkbox-item input[type="checkbox"] { 
+            width: auto; 
+            margin-right: 12px; 
+            transform: scale(1.5); 
+        }
+        .submit-btn { 
+            background: linear-gradient(45deg, #ff0000, #ff6600); 
+            color: white; 
+            border: none; 
+            padding: 20px 60px; 
+            font-size: 1.8rem; 
+            font-family: 'Orbitron', sans-serif; 
+            font-weight: 900; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            width: 100%; 
+            margin-top: 30px; 
+            box-shadow: 0 0 30px rgba(255,0,0,0.5); 
+            transition: all 0.3s; 
+        }
+        .submit-btn:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 0 50px rgba(255,0,0,0.8); 
+        }
+        .back-link { 
+            display: inline-block; 
+            margin-top: 30px; 
+            color: #ff0; 
+            text-decoration: none; 
+            font-size: 1.2rem; 
+        }
+        .back-link:hover { 
+            color: #fff; 
+            text-decoration: underline; 
+        }
+        @media (max-width: 768px) { 
+            .header { font-size: 2.5rem; } 
+            .subheader { font-size: 1.4rem; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header">HW Entertainment Request Form</h1>
+        <p class="subheader">Please feel free to fill out our entertainment request form below and we will contact you to see how we can assist you.</p>
+
+        <form action="https://formspree.io/f/YOUR-FORMSPREE-ID" method="POST" id="bookingForm">
+            <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company Name *</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Approximate Budget *</label>
+                <select id="budget" name="budget" required>
+                    <option value="">Select Budget Range</option>
+                    <option value="500-1000">$500 - $1,000</option>
+                    <option value="1000-5000">$1,000 - $5,000</option>
+                    <option value="5000-10000">$5,000 - $10,000</option>
+                    <option value="10000+">$10,000+</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="artist">Desired Artist *</label>
+                <select id="artist" name="artist" required>
+                    <option value="">Select Artist</option>
+                    <option value="Herman Watson">Herman Watson</option>
+                    <option value="Atmosphere">Atmosphere</option>
+                    <option value="B-Real (Cypress Hill)">B-Real (Cypress Hill)</option>
+                    <option value="Baby Bash">Baby Bash</option>
+                    <option value="The D.O.C. (NWA)">The D.O.C. (NWA)</option>
+                    <option value="Sage Francis">Sage Francis</option>
+                    <option value="Inspectah Deck (Wu-Tang Clan)">Inspectah Deck (Wu-Tang Clan)</option>
+                    <option value="Rick Ross">Rick Ross</option>
+                    <option value="Crooked I">Crooked I</option>
+                    <option value="Talib Kweli">Talib Kweli</option>
+                    <option value="Rittz">Rittz</option>
+                    <option value="Yukmouth (Luniz)">Yukmouth (Luniz)</option>
+                    <option value="RA The Rugged Man">RA The Rugged Man</option>
+                    <option value="Chuck D (Public Enemy)">Chuck D (Public Enemy)</option>
+                    <option value="Ice-T">Ice-T</option>
+                    <option value="Freddie Gibbs">Freddie Gibbs</option>
+                    <option value="Andre Nickatina">Andre Nickatina</option>
+                    <option value="Rappin' 4-Tay">Rappin' 4-Tay</option>
+                    <option value="Celly Cel">Celly Cel</option>
+                    <option value="IAMSU!">IAMSU!</option>
+                    <option value="Berner">Berner</option>
+                    <option value="Necro">Necro</option>
+                    <option value="Vinnie Paz (Jedi Mind Tricks)">Vinnie Paz (Jedi Mind Tricks)</option>
+                    <option value="Ill Bill (Heavy Metal Kings)">Ill Bill (Heavy Metal Kings)</option>
+                    <option value="King Lil G">King Lil G</option>
+                    <option value="Mistah F.A.B.">Mistah F.A.B.</option>
+                    <option value="Suga Free">Suga Free</option>
+                    <option value="Afroman">Afroman</option>
+                    <option value="Snoop Dogg">Snoop Dogg</option>
+                    <option value="E-40">E-40</option>
+                    <option value="Bizzy Bone">Bizzy Bone</option>
+                    <option value="Krayzie Bone">Krayzie Bone</option>
+                    <option value="Layzie Bone">Layzie Bone</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Service Type *</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="licenses" name="service" value="Licenses">
+                        <label for="licenses">Licenses</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="unreleased" name="service" value="Unreleased Exclusives">
+                        <label for="unreleased">Unreleased Exclusives</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="custom" name="service" value="Custom Exclusive">
+                        <label for="custom">Custom Exclusive</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT REQUEST</button>
+        </form>
+
+        <a href="index.html" class="back-link">← Back to Roster</a>
+    </div>
+
+    <script>
+        // Form validation and submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            const checkboxes = document.querySelectorAll('input[name="service"]:checked');
+            if (checkboxes.length === 0) {
+                e.preventDefault();
+                alert('Please select at least one service type.');
+                return false;
+            }
+        });
+    </script>
+</body>
+</html>
