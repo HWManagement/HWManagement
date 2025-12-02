@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtistBook - Book Hip-Hop Artists Safely</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f4f4f4; }
+        header { background: #333; color: white; padding: 10px; text-align: center; }
+        .search { margin: 20px 0; }
+        input[type="text"] { padding: 10px; width: 70%; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        .artist { background: white; margin: 10px 0; padding: 15px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .booking { background: #28a745; color: white; padding: 10px; text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header><h1>ArtistBook: License Hip-Hop Beats & Vocals</h1></header>
+    <div class="search">
+        <input type="text" placeholder="Search artists/beats (e.g., Burner vocals)">
+        <button onclick="search()">Search</button>
+    </div>
+    <div id="results">
+        <div class="artist">
+            <h3>Burner - Sample Beat</h3>
+            <p>License: $50 non-exclusive. Escrow protected.</p>
+            <button onclick="book()">Book Now</button>
+        </div>
+        <!-- Add more dynamically -->
+    </div>
+    <div class="booking">
+        <p>Safe booking: Escrow, verified artists, no scams.</p>
+    </div>
+    <script>
+        function search() { /* Add search logic */ alert('Searching...'); }
+        function book() { alert('Redirect to payment/escrow'); }
+    </script>
+</body>
+</html>
