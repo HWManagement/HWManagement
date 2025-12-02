@@ -6,36 +6,36 @@
     <title>HW ENTERTAINMENT LLC</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Bebas+Neue&family=Monoton&family=Russo+One&display=swap" rel="stylesheet">
     <style>
-        body { margin:0; padding:0; background:#000; color:#fff; text-align:center; overflow-x:hidden; }
-        
-        header { 
-            background: linear-gradient(45deg, #ff0000, #000, #ff0000);
-            padding: 18vh 5vw 14vh;
+        body{margin:0;padding:0;background:#000;color:#fff;text-align:center;overflow-x:hidden}
+        header{
+            background:linear-gradient(45deg,#ff0000,#000,#ff0000);
+            padding:18vh 20px 14vh;
         }
-        .logo {
-            font-family: 'Monoton', cursive;
-            font-size: 10.5vw;           /* fits perfectly on all phones */
-            letter-spacing: 0.4vw;
-            text-shadow: 0 0 35px #ff0000;
-            margin:0;
+        .logo{
+            font-family:'Monoton',cursive;
+            font-size:8.5vw;               /* ← this is the magic number */
+            letter-spacing:1.8vw;
+            text-shadow:0 0 35px #ff0000;
+            max-width:95%;
+            margin:0 auto;
         }
-        .subtitle { font-family: 'Bebas Neue', cursive; font-size: 8vw; color:#ff0; margin:6vw 0; }
-        .artist-list {
-            font-family: 'Russo One', sans-serif;
-            font-size: 6.5vw;
-            line-height: 1.7;
-            margin: 8vw auto;
-            padding: 0 8vw;
-            background: linear-gradient(to right, #ff0000, #fff, #ff0000);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .subtitle{font-family:'Bebas Neue',cursive;font-size:7.5vw;color:#ff0;margin:5vw 0}
+        .artist-list{
+            font-family:'Russo One',sans-serif;
+            font-size:6.2vw;
+            line-height:1.8;
+            margin:8vw auto;
+            padding:0 10px;
+            background:linear-gradient(to right,#ff0000,#fff,#ff0000);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
         }
-        .inquire-btn {
-            margin: 12vw auto 15vw;
-            padding: 5vw 12vw;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 900;
-            font-size: 8.5vw;
+        .inquire-btn{
+            margin:10vw auto 14vw;
+            padding:18px 60px;
+            font-family:'Orbitron',sans-serif;
+            font-size:8vw;
+            font-weight:900;
             color:#000;
             background:#ff0000;
             border-radius:50px;
@@ -43,41 +43,38 @@
             text-decoration:none;
             display:inline-block;
         }
-        .inquire-btn:hover { transform:scale(1.08); background:#fff; color:#ff0000; }
+        footer{padding:10vw;font-size:3.5vw;opacity:0.8}
 
-        footer { padding:10vw; opacity:0.8; font-size:3.5vw; }
-
-        /* Desktop – huge again */
-        @media (min-width:768px) {
-            .logo { font-size:6.2rem; letter-spacing:8px; }
-            .subtitle { font-size:2.8rem; }
-            .artist-list { font-size:3.4rem; }
-            .inquire-btn { font-size:3rem; padding:25px 90px; }
-            footer { font-size:1rem; }
+        @media(min-width:768px){
+            .logo{font-size:6rem;letter-spacing:10px}
+            .subtitle{font-size:2.8rem}
+            .artist-list{font-size:3.2rem}
+            .inquire-btn{font-size:2.8rem;padding:25px 90px}
+            footer{font-size:1rem}
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">HW ENTERTAINMENT LLC</div>
-    </header>
+<header>
+    <div class="logo">HW ENTERTAINMENT LLC</div>
+</header>
 
-    <div class="subtitle">EXCLUSIVE ROSTER 2025</div>
+<div class="subtitle">EXCLUSIVE ROSTER 2025</div>
 
-    <div class="artist-list">
-        HERMAN WATSON • ATMOSPHERE • B-REAL • BABY BASH • THE D.O.C.<br>
-        SAGE FRANCIS • INSPECTAH DECK • RICK ROSS • CROOKED I • TALIB KWELI<br>
-        RITTZ • YUKMOUTH • RA THE RUGGED MAN • CHUCK D • ICE-T<br>
-        FREDDIE GIBBS • ANDRE NICKATINA • CELLY CEL • IAMSU! • BERNER<br>
-        NECRO • VINNIE PAZ • KING LIL G • SUGA FREE • AFROMAN<br>
-        SNOOP DOGG • E-40 • BIZZY BONE • KRAYZIE BONE • LAYZIE BONE<br>
-        + MANY MORE LEGENDS
-    </div>
+<div class="artist-list">
+    HERMAN WATSON • ATMOSPHERE • B-REAL • BABY BASH • THE D.O.C.<br>
+    SAGE FRANCIS • INSPECTAH DECK • RICK ROSS • CROOKED I • TALIB KWELI<br>
+    RITTZ • YUKMOUTH • RA THE RUGGED MAN • CHUCK D • ICE-T<br>
+    FREDDIE GIBBS • ANDRE NICKATINA • CELLY CEL • IAMSU! • BERNER<br>
+    NECRO • VINNIE PAZ • KING LIL G • SUGA FREE • AFROMAN<br>
+    SNOOP DOGG • E-40 • BIZZY BONE • KRAYZIE BONE • LAYZIE BONE<br>
+    + MANY MORE LEGENDS
+</div>
 
-    <a href="request-form.html" class="inquire-btn">INQUIRE HERE</a>
+<a href="request-form.html" class="inquire-btn">INQUIRE HERE</a>
 
-    <footer>© 2025 HW Entertainment LLC — Direct Access Only</footer>
+<footer>© 2025 HW Entertainment LLC — Direct Access Only</footer>
 
 </body>
 </html>
