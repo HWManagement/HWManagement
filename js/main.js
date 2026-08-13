@@ -13,15 +13,25 @@
     if (a.exclusive) badges.push('<span class="badge badge-exclusive">Exclusive</span>');
     const note = a.note ? `<div class="note">${escapeHtml(a.note)}</div>` : "";
     const tags = (a.tags || []).slice(0, 3).map((t) => `<span class="tag">${escapeHtml(t)}</span>`).join("");
-    return `<a class="artist-card" href="${artistUrl(a.slug)}" data-slug="${a.slug}">
+    const snip = a.line ? `<p class="snip">${escapeHtml(a.line)}</p>` : "";
+    const photoInner = a.photo
+      ? `<img class="photo" src="${escapeHtml(a.photo)}" alt="${escapeHtml(a.name)}" width="480" height="280" loading="lazy">`
+      : `<span class="initials">${escapeHtml(HW.initials(a.name))}</span>`;
+    const klass = a.photo ? "artist-card has-photo" : "artist-card no-photo";
+    return `<a class="${klass}" href="${artistUrl(a.slug)}" data-slug="${a.slug}">
       <span class="gold-line"></span>
-      <span class="wash"></span>
-      <span class="initials">${escapeHtml(HW.initials(a.name))}</span>
+      <div class="photo-wrap">${photoInner}<span class="overlay"></span></div>
       <div class="card-top">${badges.join("")}</div>
-      <div class="tags">${tags}</div>
-      <h3>${escapeHtml(a.name)}</h3>
-      ${note}
-      <div class="price">${HW.priceLabel(a)}</div>
+      <div class="card-body">
+        <div class="tags">${tags}</div>
+        <h3>${escapeHtml(a.name)}</h3>
+        ${note}
+        ${snip}
+        <div class="card-cta">
+          <div class="price">${HW.priceLabel(a)}</div>
+          <span class="book-cta">Book</span>
+        </div>
+      </div>
     </a>`;
   }
 
@@ -275,6 +285,30 @@
     document.title = artist.name + " — HW Entertainment";
     const desc = document.querySelector('meta[name="description"]');
     if (desc) desc.setAttribute("content", artist.line);
+    const pagesBase = "https://hwmanagement.github.io/HWManagement/";
+    if (artist.photo) {
+      const abs = pagesBase + artist.photo;
+      const og = document.querySelector('meta[property="og:image"]');
+      if (og) og.setAttribute("content", abs);
+      let tw = document.querySelector('meta[name="twitter:image"]');
+      if (!tw) {
+        tw = document.createElement("meta");
+        tw.setAttribute("name", "twitter:image");
+        document.head.appendChild(tw);
+      }
+      tw.setAttribute("content", abs);
+      let card = document.querySelector('meta[name="twitter:card"]');
+      if (!card) {
+        card = document.createElement("meta");
+        card.setAttribute("name", "twitter:card");
+        document.head.appendChild(card);
+      }
+      card.setAttribute("content", "summary_large_image");
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute("content", artist.name + " — HW Entertainment");
+      const ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute("content", artist.line);
+    }
 
     const badges = [];
     if (artist.unreleased) badges.push('<span class="badge badge-unreleased">Unreleased</span>');
@@ -306,13 +340,25 @@
     const rel = HW.related(artist).map(cardHTML).join("");
     const inquire = "request-form.html?artist=" + encodeURIComponent(artist.name);
 
+    const photoBlock = artist.photo
+      ? `<div class="artist-hero-photo"><img src="${escapeHtml(artist.photo)}" alt="${escapeHtml(artist.name)}"></div>`
+      : `<div class="artist-hero-photo fallback"><span class="initials">${escapeHtml(HW.initials(artist.name))}</span></div>`;
+
     root.innerHTML = `
-      <section class="page-hero">
-        <div class="wrap">
-          <p class="kicker">Licensed Feature</p>
-          <h1 class="artist-hero-name">${escapeHtml(artist.name)}</h1>
-          ${note}
-          <div class="tags" style="margin-top:18px;display:flex;gap:8px;flex-wrap:wrap">${badges.join("")}${tags}</div>
+      <section class="page-hero artist-hero">
+        <div class="wrap artist-hero-grid">
+          ${photoBlock}
+          <div class="artist-hero-copy">
+            <p class="kicker">Licensed Feature</p>
+            <h1 class="artist-hero-name">${escapeHtml(artist.name)}</h1>
+            ${note}
+            <p class="artist-hero-snip">${escapeHtml(artist.line)}</p>
+            <div class="tags">${badges.join("")}${tags}</div>
+            <div class="artist-actions">
+              <a class="btn" href="${inquire}">Book Now</a>
+              <a class="btn btn-ghost" href="catalog.html">Back to Catalog</a>
+            </div>
+          </div>
         </div>
       </section>
       <div class="wrap artist-layout">
