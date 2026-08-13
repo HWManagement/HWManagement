@@ -1,27 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You – HW Entertainment</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Bebas+Neue&family=Russo+One&display=swap" rel="stylesheet">
-    <style>
-        body { margin:0; padding:0; background:#000; color:#fff; height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; }
-        .wrapper { max-width:700px; padding:40px; }
-        h1 { font-family:'Orbitron',sans-serif; font-size:4.5rem; color:#ff0000; text-shadow:0 0 30px #ff0000; margin:0; }
-        p { font-family:'Bebas Neue',cursive; font-size:2rem; color:#ff0; margin:40px 0; }
-        .back { color:#ff0; font-size:1.4rem; text-decoration:none; }
-        .back:hover { color:#fff; }
-        @media (max-width:768px) { h1{font-size:3rem;} p{font-size:1.6rem;} }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You — HW Entertainment</title>
+  <meta name="description" content="We just received your request. One of our team members will hit you back within 24 hours with availability and exclusive pricing.">
+  <meta name="theme-color" content="#0B0B0D">
+  <meta property="og:title" content="Thank You — HW Entertainment">
+  <meta property="og:description" content="We just received your request. One of our team members will hit you back within 24 hours with availability and exclusive pricing.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
+  <link rel="icon" href="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <div class="wrapper">
-        <h1>THANK YOU</h1>
-        <p>We just received your request.<br>
-        One of our team members will hit you back within 24 hours<br>
-        with availability and exclusive pricing.</p>
-        <a href="index.html" class="back">← Back to Roster</a>
+<body data-page="thanks">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="HW Entertainment home">
+        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="44" height="44" alt="HW Entertainment logo">
+        <span class="brand-text">HW ENTERTAINMENT<span>LLC</span></span>
+      </a>
+            <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="catalog.html">Artists</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="promotion.html">Promotion</a>
+        <a href="billboard.html">Billboard</a>
+        <a href="about.html">About</a>
+        <a class="btn nav-book" href="request-form.html">Book Now</a>
+      </nav>
+      <div class="search-wrap" id="search-wrap">
+        <button class="search-toggle" type="button" aria-label="Search artists" aria-expanded="false" aria-controls="search-panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </button>
+        <div class="search-panel" id="search-panel" role="search">
+          <label class="visually-hidden" for="artist-search" style="position:absolute;left:-9999px">Search artists</label>
+          <input id="artist-search" type="search" placeholder="Search artists…" autocomplete="off" aria-autocomplete="list" aria-controls="search-results" role="combobox" aria-expanded="false">
+          <ul class="search-results" id="search-results" role="listbox"></ul>
+        </div>
+      </div>
+      <a class="btn btn-book header-cta" href="request-form.html">Book Now</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </header>
+  <main id="main">
+    <div class="thanks">
+      <div>
+        <p class="kicker">Request received</p>
+        <h1>Thank You</h1>
+        <p>We just received your request. One of our team members will hit you back within 24 hours with availability and exclusive pricing.</p>
+        <a class="btn" href="catalog.html">Back to Catalog</a>
+      </div>
+    </div>
+
+  </main>
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="52" height="52" alt="HW Entertainment logo">
+        <p>Licensed features from 100+ major artists — fully cleared, contract-backed.</p>
+        <div class="socials">
+          <a href="https://instagram.com/hwatson27" target="_blank" rel="noopener">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="catalog.html">Artists / Catalog</a></li>
+          <li><a href="promotion.html">Promotion</a></li>
+          <li><a href="billboard.html">Billboard</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Booking</h4>
+        <ul>
+          <li><a href="request-form.html">Book Now</a></li>
+          <li><a href="https://tinyurl.com/HWATSON27" target="_blank" rel="noopener">Inquire (secondary)</a></li>
+          <li class="legal-line">24 hour reply</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal / Trust</h4>
+        <p class="legal-line">All features fully licensed &amp; contract-backed.</p>
+        <p style="margin-top:10px"><a href="faq.html">Licensing FAQ</a></p>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <div>© 2026 HW Entertainment LLC</div>
+      <p class="disclaimer">All music is exclusively owned by HW Entertainment LLC. All features 100% cleared with contracts &amp; splits upon payment.</p>
+    </div>
+  </footer>
+  <script src="js/artists.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
