@@ -7,6 +7,13 @@
     return "artist.html?name=" + encodeURIComponent(slug);
   }
 
+  function placeholderSrc(a) {
+    const tags = a.tags || [];
+    if (tags.includes("West Coast")) return "assets/placeholders/west.jpg";
+    if (tags.includes("East Coast")) return "assets/placeholders/east.jpg";
+    return "assets/placeholders/legacy.jpg";
+  }
+
   function cardHTML(a) {
     const badges = [];
     if (a.unreleased) badges.push('<span class="badge badge-unreleased">Unreleased</span>');
@@ -16,7 +23,7 @@
     const snip = a.line ? `<p class="snip">${escapeHtml(a.line)}</p>` : "";
     const photoInner = a.photo
       ? `<img class="photo" src="${escapeHtml(a.photo)}" alt="${escapeHtml(a.name)}" width="480" height="280" loading="lazy">`
-      : `<span class="initials">${escapeHtml(HW.initials(a.name))}</span>`;
+      : `<img class="photo placeholder-tex" src="${placeholderSrc(a)}" alt="" width="480" height="280" loading="lazy" aria-hidden="true"><span class="mono-ring" aria-hidden="true"></span><span class="initials gold-mono">${escapeHtml(HW.initials(a.name))}</span>`;
     const klass = a.photo ? "artist-card has-photo" : "artist-card no-photo";
     return `<a class="${klass}" href="${artistUrl(a.slug)}" data-slug="${a.slug}">
       <span class="gold-line"></span>
@@ -342,7 +349,7 @@
 
     const photoBlock = artist.photo
       ? `<div class="artist-hero-photo"><img src="${escapeHtml(artist.photo)}" alt="${escapeHtml(artist.name)}"></div>`
-      : `<div class="artist-hero-photo fallback"><span class="initials">${escapeHtml(HW.initials(artist.name))}</span></div>`;
+      : `<div class="artist-hero-photo fallback no-photo"><img class="placeholder-tex" src="${placeholderSrc(artist)}" alt=""><span class="mono-ring" aria-hidden="true"></span><span class="initials gold-mono">${escapeHtml(HW.initials(artist.name))}</span></div>`;
 
     root.innerHTML = `
       <section class="page-hero artist-hero">
@@ -403,7 +410,8 @@
       select.appendChild(opt);
     });
     const params = new URLSearchParams(location.search);
-    const pre = params.get("artist");
+    const stored = (window.HW_UTM && window.HW_UTM.artist) || "";
+    const pre = params.get("artist") || params.get("name") || stored;
     if (pre) {
       const match = names.find((a) => a.name.toLowerCase() === pre.toLowerCase() || a.slug === pre.toLowerCase());
       if (match) select.value = match.name;
@@ -414,7 +422,13 @@
         opt.selected = true;
         select.appendChild(opt);
       }
+      const hiddenArtist = form.querySelector("[name='artist']");
+      if (hiddenArtist) hiddenArtist.value = select.value || pre;
     }
+    select.addEventListener("change", () => {
+      const hiddenArtist = form.querySelector("[name='artist']");
+      if (hiddenArtist) hiddenArtist.value = select.value;
+    });
 
     const next = $("#form-next");
     if (next) next.value = new URL("thanks.html", location.href).href;
@@ -436,14 +450,42 @@
       const checks = $$('input[type="checkbox"][name^="service"]', form);
       const any = checks.some((c) => c.checked);
       const err = $("#service-error");
-      if (!any) {
+      if (checks.length && !any) {
         e.preventDefault();
         if (err) err.classList.add("is-on");
         checks[0].focus();
+        return;
       } else if (err) {
         err.classList.remove("is-on");
       }
+      const booked = {
+        artist: (select && select.value) || (form.querySelector("[name='Desired Artist']") || {}).value || "",
+        first: ($("#first-name") && $("#first-name").value) || "",
+        email: ($("#email") && $("#email").value) || ""
+      };
+      try { sessionStorage.setItem("hw_last_request", JSON.stringify(booked)); } catch (err2) {}
+      const next = $("#form-next");
+      if (next) {
+        const u = new URL("thanks.html", location.href);
+        if (booked.artist) u.searchParams.set("artist", booked.artist);
+        next.value = u.href;
+      }
     });
+  }
+
+  function initThanks() {
+    const root = $("#thanks-booked");
+    if (!root) return;
+    const params = new URLSearchParams(location.search);
+    let booked = {};
+    try { booked = JSON.parse(sessionStorage.getItem("hw_last_request") || "{}"); } catch (e) { booked = {}; }
+    const artist = params.get("artist") || booked.artist || "";
+    const first = booked.first || "";
+    const nameBit = first ? first + ", " : "";
+    const artistBit = artist
+      ? `You requested <strong>${escapeHtml(artist)}</strong>.`
+      : `We have your request.`;
+    root.innerHTML = `<p class="lede">${nameBit}${artistBit} A team member replies within 24 hours with availability and exclusive pricing.</p>`;
   }
 
   /* FAQ */
@@ -475,6 +517,7 @@
     initCatalog();
     initArtist();
     initForm();
+    initThanks();
     initFaq();
     initScrollChevron();
   });
