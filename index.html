@@ -1,90 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HW ENTERTAINMENT LLC | Licensed & Custom Features</title>
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&family=Bebas+Neue&family=Russo+One&display=swap" rel="stylesheet">
-    <style>
-        body{margin:0;padding:0;background:#000;color:#fff;text-align:center;overflow-x:hidden;font-family:'Russo One',sans-serif}
-        header{background:linear-gradient(45deg,#ff0000,#000,#ff0000);padding:8vh 20px 6vh}
-        .logo-img{max-width:82vw;height:auto;margin:4vh auto 1vh;display:block}
-        .logo-text{
-            font-family:'Rajdhani',sans-serif;font-weight:700;
-            font-size:11vw;color:#fff;
-            letter-spacing:0.15em;text-transform:uppercase;
-            text-shadow:0 0 30px #ff0000,0 0 60px #ff0000;
-            margin:0 auto 6vh;
-        }
-        .section{margin:12vw auto;max-width:92%;padding:0 15px}
-        .section strong{color:#ff0000}
-        .prices{font-size:5.2vw;line-height:1.9;color:#fff}
-        .artist-title{font-size:6vw;color:#ff0;margin:12vw 0 8vw}
-        .artist-list{
-            font-size:6.2vw;line-height:1.9;margin:10vw auto;padding:0 10px;
-            background:linear-gradient(to right,#ff0000,#fff,#ff0000);
-            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-        }
-        .delivery{font-size:5vw;margin:12vw 20px}
-        .inquire-btn{
-            margin:15vw auto;display:inline-block;padding:22px 90px;
-            background:#ff0000;color:#000;font-family:'Rajdhani',sans-serif;font-weight:700;
-            font-size:8.5vw;border-radius:50px;box-shadow:0 0 40px #ff0000;text-decoration:none;transition:.4s
-        }
-        .inquire-btn:hover{transform:scale(1.08);background:#fff;color:#ff0000}
-        .disclaimer{font-size:4vw;opacity:0.7;margin:15vw 20px 10vw}
-        footer{padding:10vw;font-size:3.5vw;opacity:0.7}
-
-        @media(min-width:768px){
-            .logo-img{max-width:420px}
-            .logo-text{font-size:7.5rem}
-            .prices,.delivery,.disclaimer,.artist-list{font-size:1.8rem}
-            .artist-title{font-size:2.4rem}
-            .inquire-btn{font-size:3rem;padding:30px 120px}
-            footer{font-size:1rem}
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HW Entertainment — Licensed Features from 100+ Artists</title>
+  <meta name="description" content="Licensed features from 100+ major artists — fully cleared, contract-backed. Real verses. Real clearance. Real fast.">
+  <meta name="theme-color" content="#0B0B0D">
+  <meta property="og:title" content="HW Entertainment — Licensed Features from 100+ Artists">
+  <meta property="og:description" content="Licensed features from 100+ major artists — fully cleared, contract-backed. Real verses. Real clearance. Real fast.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
+  <link rel="icon" href="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body data-page="home" class="has-hero">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="HW Entertainment home">
+        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="44" height="44" alt="HW Entertainment logo">
+        <span class="brand-text">HW ENTERTAINMENT<span>LLC</span></span>
+      </a>
+            <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="catalog.html">Artists</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="promotion.html">Promotion</a>
+        <a href="billboard.html">Billboard</a>
+        <a href="about.html">About</a>
+        <a class="btn nav-book" href="request-form.html">Book Now</a>
+      </nav>
+      <div class="search-wrap" id="search-wrap">
+        <button class="search-toggle" type="button" aria-label="Search artists" aria-expanded="false" aria-controls="search-panel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        </button>
+        <div class="search-panel" id="search-panel" role="search">
+          <label class="visually-hidden" for="artist-search" style="position:absolute;left:-9999px">Search artists</label>
+          <input id="artist-search" type="search" placeholder="Search artists…" autocomplete="off" aria-autocomplete="list" aria-controls="search-results" role="combobox" aria-expanded="false">
+          <ul class="search-results" id="search-results" role="listbox"></ul>
+        </div>
+      </div>
+      <a class="btn btn-book header-cta" href="request-form.html">Book Now</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero" aria-label="Introduction">
+      <canvas class="hero-canvas" id="hero-particles" aria-hidden="true"></canvas>
+      <div class="hero-overlay"></div>
+      <div class="hero-shimmer" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">HW Entertainment LLC</p>
+        <h1>Real Verses.<br>Real Clearance.<br><em>Real Fast.</em></h1>
+        <p class="hero-sub">Licensed features from 100+ major artists — fully cleared, contract-backed.</p>
+        <div class="hero-actions">
+          <a class="btn" href="catalog.html">Browse Artists</a>
+          <a class="btn btn-ghost" href="request-form.html">Book Now</a>
+        </div>
+      </div>
+      <button class="scroll-chevron" type="button" aria-label="Scroll to offer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+    </section>
 
-<header>
-    <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" alt="HW Logo" class="logo-img">
-    <div class="logo-text">ENTERTAINMENT LLC</div>
-</header>
+    <div id="after-hero" class="bogo">
+      <div class="bogo-inner">
+        <span class="bogo-badge">BOGO</span>
+        <p>Through <strong>October 1, 2026</strong>, catalog features are buy-one-get-one-free, starting at <strong>$500</strong> for full commercial licensing (usage + royalty participation). Clearance and paperwork on payment.</p>
+      </div>
+    </div>
 
-<div class="section prices">
-    <strong>Custom Exclusive Features & Licensed Guest Verses</strong><br>
-    Over 100 Legendary Artists Available<br><br>
-    <strong>Price Ranges</strong><br>
-    Licensed Guest Verses: $500 – $5,000<br>
-    Custom Exclusive Verses: $500 – $50,000
-</div>
+    <section class="trust" aria-label="Trust">
+      <div class="wrap trust-grid">
+        <div class="trust-item">
+          <div class="num" data-count="100" data-suffix="+">0+</div>
+          <div class="lbl">Artists</div>
+        </div>
+        <div class="trust-item">
+          <div class="num" data-count="500" data-suffix="+">0+</div>
+          <div class="lbl">Placements</div>
+        </div>
+        <div class="trust-item">
+          <div class="num" data-count="100" data-suffix="%">0%</div>
+          <div class="lbl">Cleared</div>
+        </div>
+      </div>
+    </section>
 
-<div class="artist-title">Featured Artists available December 2025</div>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">Roster</p>
+            <h2>Featured Artists</h2>
+          </div>
+          <a class="btn btn-ghost" href="catalog.html">Full Catalog</a>
+        </div>
+        <div class="artist-grid" id="featured-grid"></div>
+        <noscript><p class="lede">Enable JavaScript to browse the featured roster, or open <a href="catalog.html">Catalog</a>.</p></noscript>
+      </div>
+    </section>
 
-<div class="artist-list">
-    • 2 Chainz • Afroman • Berner • Blu • Brotha Lynch Hung • Bryson Tiller<br>
-    • Celly Cel • Chuck D (Public Enemy) • Crooked I (Slaughterhouse) • DMX<br>
-    • E-40 • Flo Rida • G Perico • IAMSU! • Ice-T • Inspectah Deck (Wu-Tang Clan)<br>
-    • King Lil G • KRS-One • Lil B The Based God • ¡MAYDAY! • Mozzy<br>
-    • Nate Dogg (catalog licensed features) • Necro • Ne-Yo • Ra the Rugged Man<br>
-    • Ray J • RBL Posse • Rich The Kid • Rick Ross • Rittz • Royce da 5’9”<br>
-    • Sean Paul • Snoop Dogg • Suga Free • T-Pain • Talib Kweli<br>
-    • Vinnie Paz (Jedi Mind Tricks) • WC • Yukmouth (Luniz)<br><br>
-    + Many More Legends Added Monthly
-</div>
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="kicker">How it works</p>
+            <h2>Booked in three moves</h2>
+          </div>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <div class="n">01</div>
+            <h3>Choose the artist</h3>
+            <p>Browse exclusive licenses and unreleased verses. Starting prices are on every card — no flyer wall, no guesswork.</p>
+          </div>
+          <div class="step">
+            <div class="n">02</div>
+            <h3>Send the request</h3>
+            <p>Tell us the name, budget, and service type. A team member hits you back within 24 hours with availability.</p>
+          </div>
+          <div class="step">
+            <div class="n">03</div>
+            <h3>Clearance on payment</h3>
+            <p>Contracts, ownership splits, and full clearance paperwork ship with the stems so you can release commercially.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="delivery">
-    All features are 100% cleared and delivered with contracts & splits upon delivery of payment.
-</div>
+    <section class="section" style="padding-top:0">
+      <div class="wrap teaser-row">
+        <a class="teaser promo" href="promotion.html">
+          <p class="kicker">Campaigns</p>
+          <h3>Promotion</h3>
+          <p>iTunes charting, YouTube, Spotify playlists, and clipping — built to put independent releases in front of the right rooms.</p>
+          <span class="btn btn-ghost">View Campaigns</span>
+        </a>
+        <a class="teaser bill" href="billboard.html">
+          <p class="kicker">Out-of-home</p>
+          <h3>Billboard</h3>
+          <p>Sunset Strip and Times Square one-day takeovers from $499, with photo and video documentation on every booking.</p>
+          <span class="btn btn-ghost">View Boards</span>
+        </a>
+      </div>
+    </section>
 
-<a href="request-form.html" class="inquire-btn">SERIOUS INQUIRIES ONLY</a>
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <p class="kicker">Ready</p>
+          <h2>Lock the verse.<br>Clear the paperwork.</h2>
+        </div>
+        <a class="btn" href="request-form.html">Book Now</a>
+      </div>
+    </div>
 
-<div class="disclaimer">
-    Disclaimer: all music is exclusively owned by HW Entertainment LLC.
-</div>
-
-<footer>© 2025 HW Entertainment LLC — Direct Access Only</footer>
-
+  </main>
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div class="foot-brand">
+        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="52" height="52" alt="HW Entertainment logo">
+        <p>Licensed features from 100+ major artists — fully cleared, contract-backed.</p>
+        <div class="socials">
+          <a href="https://instagram.com/hwatson27" target="_blank" rel="noopener">Instagram</a>
+          <a href="#">YouTube</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="catalog.html">Artists / Catalog</a></li>
+          <li><a href="promotion.html">Promotion</a></li>
+          <li><a href="billboard.html">Billboard</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Booking</h4>
+        <ul>
+          <li><a href="request-form.html">Book Now</a></li>
+          <li><a href="https://tinyurl.com/HWATSON27" target="_blank" rel="noopener">Inquire (secondary)</a></li>
+          <li class="legal-line">24 hour reply</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal / Trust</h4>
+        <p class="legal-line">All features fully licensed &amp; contract-backed.</p>
+        <p style="margin-top:10px"><a href="faq.html">Licensing FAQ</a></p>
+      </div>
+    </div>
+    <div class="wrap foot-bottom">
+      <div>© 2026 HW Entertainment LLC</div>
+      <p class="disclaimer">All music is exclusively owned by HW Entertainment LLC. All features 100% cleared with contracts &amp; splits upon payment.</p>
+    </div>
+  </footer>
+  <script src="js/artists.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
