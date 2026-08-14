@@ -1566,3 +1566,60 @@ body:not(.has-hero) .site-header {
 
 .thanks-booked { margin: 16px 0 28px; max-width: 46ch; }
 .thanks-booked strong { color: var(--gold); }
+
+
+/* Instagram follow strip */
+.ig-strip {
+  padding: 28px 0 8px;
+}
+.ig-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+.ig-follow {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+  padding-bottom: 2px;
+}
+.ig-follow:hover { color: var(--gold-2); border-color: var(--gold-2); }
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.ig-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+}
+.ig-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform 0.45s var(--ease), opacity 0.3s;
+}
+.ig-grid a:hover img { transform: scale(1.04); opacity: 1; }
+.ig-grid a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0);
+  transition: box-shadow 0.25s;
+}
+.ig-grid a:hover::after { box-shadow: inset 0 0 0 1px var(--gold); }
+@media (max-width: 560px) {
+  .ig-head { flex-direction: column; gap: 8px; }
+  .ig-grid { gap: 6px; }
+}
