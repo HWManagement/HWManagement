@@ -97,3 +97,5 @@ Artist photographs are stored in `assets/artists/` and were sourced from **Wikim
 - **Flesh-N-Bone** — Wikimedia Commons `Flesh-n-Bone (cropped).jpg` (CC BY 2.0, photo: Chase Stevens).
 - **Layzie Bone** — Wikimedia Commons `Layzie-bone-travis-glodt.jpg` (CC BY-SA 4.0, photo: Glodt2123).
 - **Wish Bone** — Wikimedia Commons `Wish Bone - Danforth Music Hall 2015.jpg` (CC BY 2.0, photo: The Come Up Show).
+- Sunset Spectacular — Wikimedia Commons File:TWA West Hollywood Sunset Spectacular.jpg (CC BY-SA 4.0)
+- Times Square — Wikimedia Commons File:Times Square, NYC at night - August 2025.jpg (CC BY 4.0)
