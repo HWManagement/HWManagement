@@ -1714,3 +1714,61 @@ body:not(.has-hero) .site-header {
   .ig-head { flex-direction: column; gap: 8px; }
   .ig-grid { gap: 6px; }
 }
+
+
+/* Ads / booking contact strip */
+.ads-contact {
+  margin: 28px 0 8px;
+  padding: 22px 24px 20px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(212,175,55,0.16), transparent 55%),
+    var(--bg2);
+  border-radius: 4px;
+}
+.ads-phone {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+.ads-phone:hover { color: var(--gold-2); }
+.ads-contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-bottom: 14px;
+}
+.btn-wa {
+  background: #25D366;
+  border-color: #25D366;
+  color: #0B0B0D;
+}
+.btn-wa:hover {
+  background: #1ebe5d;
+  border-color: #1ebe5d;
+  color: #0B0B0D;
+  box-shadow: 0 12px 28px rgba(37, 211, 102, 0.28);
+}
+.ads-email {
+  color: var(--text);
+  font-weight: 600;
+  border-bottom: 1px solid rgba(245,245,240,0.35);
+}
+.ads-email:hover { color: var(--gold); border-color: var(--gold); }
+.ads-socials {
+  color: var(--muted);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+.ads-socials a { color: var(--text); }
+.ads-socials a:hover { color: var(--gold); }
+.thanks .ads-contact { text-align: left; max-width: 36rem; margin-inline: auto; margin-top: 28px; }
+@media (max-width: 560px) {
+  .ads-contact-row { flex-direction: column; align-items: stretch; }
+  .ads-contact .btn { width: 100%; }
+}
