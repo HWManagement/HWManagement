@@ -960,7 +960,7 @@ body:not(.has-hero) .site-header {
   display: none;
 }
 .form-error.is-on { display: block; }
-.hp { position: absolute; left: -9999px; }
+.hp { position: absolute; left: -9999px; height: 0; width: 0; overflow: hidden; opacity: 0; }
 
 /* FAQ */
 .faq-list { max-width: 800px; }
