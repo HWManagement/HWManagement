@@ -676,6 +676,8 @@ body:not(.has-hero) .site-header {
 .teaser p { color: var(--muted); margin-bottom: 18px; max-width: 46ch; }
 .teaser.promo { background: linear-gradient(135deg, #161618 0%, #1a140c 100%); }
 .teaser.bill { background: linear-gradient(135deg, #161618 0%, #120c16 100%); }
+.teaser.feat { background: linear-gradient(135deg, #161618 0%, #1a140c 100%); }
+.teaser-row.three { grid-template-columns: 1fr 1fr 1fr; }
 
 .steps {
   display: grid;
@@ -793,6 +795,54 @@ body:not(.has-hero) .site-header {
   margin-bottom: 10px;
 }
 .promo-card p { color: var(--muted); }
+
+/* Marketing offers */
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+.offer-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 36px 32px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s var(--ease);
+}
+.offer-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.offer-card h2 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  letter-spacing: 0.08em;
+  margin: 8px 0 14px;
+}
+.offer-card p { color: var(--muted); }
+.offer-card ul {
+  list-style: none;
+  margin: 16px 0 22px;
+  padding: 0;
+  flex: 1;
+}
+.offer-card li {
+  position: relative;
+  color: var(--muted);
+  padding-left: 16px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+.offer-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.offer-card .btn { margin-top: auto; align-self: flex-start; }
 
 /* Billboard */
 .bill-grid {
@@ -1090,7 +1140,7 @@ body:not(.has-hero) .site-header {
     margin-top: 220px;
   }
   .artist-grid { grid-template-columns: repeat(2, 1fr); }
-  .teaser-row, .promo-grid, .bill-grid, .artist-layout, .form-row, .steps, .trust-grid, .cta-band {
+  .teaser-row, .teaser-row.three, .offer-grid, .promo-grid, .bill-grid, .artist-layout, .form-row, .steps, .trust-grid, .cta-band {
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
