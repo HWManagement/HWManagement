@@ -27,7 +27,7 @@ The booking form POSTs to Formspree `https://formspree.io/f/xnnevzwa` and redire
 - Roster data lives in `js/artists.js`. Artist detail is the single template `artist.html?name=slug`.
 - Artist cards use freely licensed photographs from Wikimedia Commons / Wikidata P18 when available. Otherwise a typographic initials fallback is shown. No AI-generated portraits.
 - Book Now goes to `request-form.html`. There is no public WhatsApp number on this site.
-- YouTube and TikTok footer links are placeholders (`#`) until official channels are provided. Instagram is `https://www.instagram.com/hw_management/`.
+- Footer socials: YouTube `https://www.youtube.com/@HermanWatsonHw_Management`, TikTok `https://www.tiktok.com/@hwentertainmentllc`, Instagram `https://www.instagram.com/hw_management/`.
 
 ## Photo attributions
 
