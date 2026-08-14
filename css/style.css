@@ -919,6 +919,12 @@ body:not(.has-hero) .site-header {
   color: var(--muted);
   margin-bottom: 8px;
 }
+.field label .optional {
+  letter-spacing: 0.08em;
+  text-transform: none;
+  font-size: 0.85em;
+  color: var(--muted);
+}
 .field input,
 .field select {
   width: 100%;

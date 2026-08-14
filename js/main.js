@@ -400,35 +400,64 @@
   /* Form */
   function initForm() {
     const form = $("#request-form");
-    if (!form || !window.HW) return;
+    if (!form) return;
     const select = $("#desired-artist");
-    const names = HW.ARTISTS.slice().sort((a, b) => a.name.localeCompare(b.name));
-    names.forEach((a) => {
-      const opt = document.createElement("option");
-      opt.value = a.name;
-      opt.textContent = a.note ? `${a.name} (${a.note})` : a.name;
-      select.appendChild(opt);
-    });
-    const params = new URLSearchParams(location.search);
-    const stored = (window.HW_UTM && window.HW_UTM.artist) || "";
-    const pre = params.get("artist") || params.get("name") || stored;
-    if (pre) {
-      const match = names.find((a) => a.name.toLowerCase() === pre.toLowerCase() || a.slug === pre.toLowerCase());
-      if (match) select.value = match.name;
-      else {
-        const opt = document.createElement("option");
-        opt.value = pre;
-        opt.textContent = pre;
-        opt.selected = true;
-        select.appendChild(opt);
+    const other = $("#artist-other");
+    const isSelect = !!(select && select.tagName === "SELECT");
+
+    function resolvedArtist() {
+      if (isSelect) {
+        const typed = other && other.value.trim();
+        if (select.value && select.value !== "Other") return select.value;
+        if (typed) return typed;
+        return "";
       }
-      const hiddenArtist = form.querySelector("[name='artist']");
-      if (hiddenArtist) hiddenArtist.value = select.value || pre;
+      const raw = (select && select.value) || (form.querySelector("[name='Desired Artist']") || {}).value || "";
+      return String(raw).trim();
     }
-    select.addEventListener("change", () => {
+
+    function syncHiddenArtist() {
       const hiddenArtist = form.querySelector("[name='artist']");
-      if (hiddenArtist) hiddenArtist.value = select.value;
-    });
+      if (hiddenArtist) hiddenArtist.value = resolvedArtist();
+    }
+
+    if (isSelect && window.HW) {
+      const names = HW.ARTISTS.slice().sort((a, b) => a.name.localeCompare(b.name));
+      names.forEach((a) => {
+        const opt = document.createElement("option");
+        opt.value = a.name;
+        opt.textContent = a.note ? `${a.name} (${a.note})` : a.name;
+        select.appendChild(opt);
+      });
+      const otherOpt = document.createElement("option");
+      otherOpt.value = "Other";
+      otherOpt.textContent = "Other (type a name)";
+      select.appendChild(otherOpt);
+
+      const params = new URLSearchParams(location.search);
+      const stored = (window.HW_UTM && window.HW_UTM.artist) || "";
+      const pre = params.get("artist") || params.get("name") || stored;
+      if (pre) {
+        const match = names.find((a) => a.name.toLowerCase() === pre.toLowerCase() || a.slug === pre.toLowerCase());
+        if (match) select.value = match.name;
+        else if (other) {
+          select.value = "Other";
+          other.value = pre;
+        } else {
+          const opt = document.createElement("option");
+          opt.value = pre;
+          opt.textContent = pre;
+          opt.selected = true;
+          select.appendChild(opt);
+        }
+      }
+      select.addEventListener("change", () => {
+        if (other && select.value === "Other") other.focus();
+        syncHiddenArtist();
+      });
+      if (other) other.addEventListener("input", syncHiddenArtist);
+      syncHiddenArtist();
+    }
 
     const next = $("#form-next");
     if (next) next.value = new URL("thanks.html", location.href).href;
@@ -447,6 +476,29 @@
     }
 
     form.addEventListener("submit", (e) => {
+      const artistVal = resolvedArtist();
+      const artistErr = $("#artist-error");
+      if (isSelect && !artistVal) {
+        e.preventDefault();
+        if (artistErr) artistErr.classList.add("is-on");
+        if (other) other.focus();
+        else select.focus();
+        return;
+      } else if (artistErr) {
+        artistErr.classList.remove("is-on");
+      }
+      if (isSelect && artistVal && select.value !== artistVal) {
+        let opt = Array.from(select.options).find((o) => o.value === artistVal);
+        if (!opt) {
+          opt = document.createElement("option");
+          opt.value = artistVal;
+          opt.textContent = artistVal;
+          select.appendChild(opt);
+        }
+        select.value = artistVal;
+      }
+      syncHiddenArtist();
+
       const checks = $$('input[type="checkbox"][name^="service"]', form);
       const any = checks.some((c) => c.checked);
       const err = $("#service-error");
@@ -459,16 +511,16 @@
         err.classList.remove("is-on");
       }
       const booked = {
-        artist: (select && select.value) || (form.querySelector("[name='Desired Artist']") || {}).value || "",
+        artist: artistVal,
         first: ($("#first-name") && $("#first-name").value) || "",
         email: ($("#email") && $("#email").value) || ""
       };
       try { sessionStorage.setItem("hw_last_request", JSON.stringify(booked)); } catch (err2) {}
-      const next = $("#form-next");
-      if (next) {
+      const nextEl = $("#form-next");
+      if (nextEl) {
         const u = new URL("thanks.html", location.href);
         if (booked.artist) u.searchParams.set("artist", booked.artist);
-        next.value = u.href;
+        nextEl.value = u.href;
       }
     });
   }
