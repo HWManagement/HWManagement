@@ -1,4 +1,7 @@
-/* HW Entertainment LLC — roster data (union of unreleased, exclusive, featured, form lists) */
+/* HW Entertainment LLC — catalog data.
+   ARTISTS: names used for the plain-text "Catalog on request" list and the request form only.
+   No prices, photos or availability claims are rendered from this list.
+   (photo/line fields are legacy and are not displayed.) */
 (function (global) {
   const artists = [
     // ——— Unreleased verses ———
@@ -97,29 +100,6 @@
     { slug: "wish-bone", photo: "assets/artists/wish-bone.jpg", name: "Wish Bone", tags: ["Hip-Hop", "Legacy"], unreleased: false, exclusive: true, featured: false, line: "Bone Thugs-n-Harmony member from Cleveland. Known for the group's sing-rap harmonies and 1990s Midwest hits." }
   ];
 
-  function initials(name) {
-    const clean = name.replace(/[¡!']/g, "").trim();
-    const parts = clean.split(/\s+/).filter(Boolean);
-    if (parts.length === 1) {
-      const p = parts[0];
-      if (/^\d/.test(p)) return p.slice(0, 2).toUpperCase();
-      return p.slice(0, 2).toUpperCase();
-    }
-    const skip = new Set(["the", "da", "of"]);
-    const keep = parts.filter((p, i) => i === 0 || !skip.has(p.toLowerCase()));
-    return (keep[0][0] + (keep[1] ? keep[1][0] : keep[0][1] || "")).toUpperCase();
-  }
-
-  function startingPrice(a) {
-    if (a.exclusive) return 500;
-    if (a.unreleased) return 1500;
-    return 500;
-  }
-
-  function priceLabel(a) {
-    return "from $" + startingPrice(a).toLocaleString("en-US");
-  }
-
   function getBySlug(slug) {
     return artists.find((a) => a.slug === slug);
   }
@@ -130,34 +110,8 @@
     return artists.find((a) => a.name.toLowerCase() === n || a.slug === n);
   }
 
-  function search(q) {
-    const s = (q || "").trim().toLowerCase();
-    if (!s) return [];
-    return artists.filter((a) => {
-      return a.name.toLowerCase().includes(s) ||
-        (a.note && a.note.toLowerCase().includes(s)) ||
-        a.tags.some((t) => t.toLowerCase().includes(s));
-    }).slice(0, 8);
-  }
-
-  function related(artist, n) {
-    n = n || 4;
-    const pool = artists.filter((a) => a.slug !== artist.slug);
-    const scored = pool.map((a) => {
-      const overlap = a.tags.filter((t) => artist.tags.includes(t)).length;
-      const tier = (a.unreleased === artist.unreleased || a.exclusive === artist.exclusive) ? 1 : 0;
-      return { a, s: overlap * 2 + tier };
-    }).sort((x, y) => y.s - x.s || x.a.name.localeCompare(y.a.name));
-    return scored.slice(0, n).map((x) => x.a);
-  }
-
   global.HW = global.HW || {};
   global.HW.ARTISTS = artists;
-  global.HW.initials = initials;
-  global.HW.startingPrice = startingPrice;
-  global.HW.priceLabel = priceLabel;
   global.HW.getBySlug = getBySlug;
   global.HW.getByName = getByName;
-  global.HW.search = search;
-  global.HW.related = related;
 })(window);
