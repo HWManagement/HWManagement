@@ -11,47 +11,40 @@
 </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Catalog — HW Entertainment</title>
-  <meta name="description" content="Filter the HW Entertainment roster: unreleased verses, exclusive licenses, hip-hop, R&B, West Coast, East Coast, and legacy artists.">
+  <title>Catalog License — HW Entertainment LLC</title>
+  <meta name="description" content="License an existing recording from the HW Entertainment catalog. Each listing shows a 15-second preview, exclusivity, year, length, BPM/key, price and whether a feat. credit is allowed.">
   <meta name="theme-color" content="#0B0B0D">
-  <meta property="og:title" content="Catalog — HW Entertainment">
-  <meta property="og:description" content="Filter the HW Entertainment roster: unreleased verses, exclusive licenses, hip-hop, R&B, West Coast, East Coast, and legacy artists.">
+  <meta property="og:title" content="Catalog License — HW Entertainment LLC">
+  <meta property="og:description" content="License an existing recording from the HW Entertainment catalog. Each listing shows a 15-second preview, exclusivity, year, length, BPM/key, price and whether a feat. credit is allowed.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
-  <link rel="icon" href="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg">
+  <meta property="og:site_name" content="HW Entertainment LLC">
+  <meta property="og:image" content="https://hwmanagement.github.io/HWManagement/assets/logo.jpg">
+  <link rel="icon" href="assets/logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/credibility.css">
 </head>
 <body data-page="catalog">
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" id="site-header">
     <div class="header-inner">
-      <a class="brand" href="index.html" aria-label="HW Entertainment home">
-        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="44" height="44" alt="HW Entertainment logo">
+      <a class="brand" href="index.html" aria-label="HW Entertainment LLC home">
+        <img src="assets/logo.jpg" width="44" height="44" alt="HW Management logo: HW monogram">
         <span class="brand-text">HW ENTERTAINMENT<span>LLC</span></span>
       </a>
-            <nav class="nav" id="site-nav" aria-label="Primary">
-        <a href="catalog.html" aria-current="page">Artists</a>
-        <a href="catalog.html" aria-current="page">Catalog</a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="catalog.html" aria-current="page">Catalog License</a>
+        <a href="intro-custom.html">Intro / Custom</a>
+        <a href="license-sample.html">Sample License</a>
         <a href="marketing.html">Marketing</a>
-        <a href="promotion.html">Promotion</a>
-        <a href="billboard.html">Billboard</a>
         <a href="about.html">About</a>
-        <a class="btn nav-book" href="request-form.html">Book Now</a>
+        <a href="faq.html">FAQ</a>
+        <a class="btn nav-book" href="request-form.html">Request a Verse</a>
       </nav>
-      <div class="search-wrap" id="search-wrap">
-        <button class="search-toggle" type="button" aria-label="Search artists" aria-expanded="false" aria-controls="search-panel">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
-        </button>
-        <div class="search-panel" id="search-panel" role="search">
-          <label class="visually-hidden" for="artist-search" style="position:absolute;left:-9999px">Search artists</label>
-          <input id="artist-search" type="search" placeholder="Search artists…" autocomplete="off" aria-autocomplete="list" aria-controls="search-results" role="combobox" aria-expanded="false">
-          <ul class="search-results" id="search-results" role="listbox"></ul>
-        </div>
-      </div>
-      <a class="btn btn-book header-cta" href="request-form.html">Book Now</a>
+      <a class="btn btn-book header-cta" href="request-form.html">Request a Verse</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
         <span></span><span></span><span></span>
       </button>
@@ -60,40 +53,59 @@
   <main id="main">
     <section class="page-hero">
       <div class="wrap">
-        <p class="kicker">Roster</p>
-        <h1>Catalog</h1>
-        <p>Real artists. Cleared verses. We reply in 24 hours. Clearance and paperwork on payment.</p>
+        <p class="kicker">Product 1</p>
+        <h1>Catalog License</h1>
+        <p>An existing recording from our catalog, licensed for your release. Premade, lower cost, limited credit. Not a new session and not an endorsement.</p>
       </div>
     </section>
+    <div class="bogo" data-expires="2026-10-02T00:00:00-07:00">
+      <div class="bogo-inner">
+        <span class="bogo-badge">BOGO</span>
+        <p>Catalog License offer: buy one, get one free <strong>through October 1, 2026</strong>. Applies to catalog licenses only; the second license is of equal or lesser price. Ends October 1, 2026.</p>
+      </div>
+    </div>
     <section class="section">
       <div class="wrap">
-        <div class="filters" role="tablist" aria-label="Catalog filters">
-          <button class="pill is-active" type="button" data-filter="all">All</button>
-          <button class="pill" type="button" data-filter="unreleased">Unreleased Verses</button>
-          <button class="pill" type="button" data-filter="exclusive">Exclusive Licenses</button>
-          <button class="pill" type="button" data-filter="Hip-Hop">Hip-Hop</button>
-          <button class="pill" type="button" data-filter="R&amp;B">R&amp;B</button>
-          <button class="pill" type="button" data-filter="West Coast">West Coast</button>
-          <button class="pill" type="button" data-filter="East Coast">East Coast</button>
-          <button class="pill" type="button" data-filter="Legacy">Legacy Artists</button>
+        <div class="facts-grid">
+          <div class="fact"><h3>Price</h3><p>From <strong>$500</strong> for a released catalog verse. From <strong>$1,500</strong> for an unreleased catalog verse. Each listing shows its own price.</p></div>
+          <div class="fact"><h3>What it is</h3><p>A license to use a recording that already exists, on the terms written in your signed license.</p></div>
+          <div class="fact"><h3>What it isn’t</h3><p>Not a new verse recorded for you, not a feature the artist chose to do with you, and not an endorsement.</p></div>
+          <div class="fact"><h3>Credit</h3><p>Each listing says whether a “feat.” credit is allowed. Where it is, name use is limited to what the license specifies.</p></div>
         </div>
-        <div class="filters" aria-label="Price filter">
-          <button class="pill is-active" type="button" data-price="all">All prices</button>
-          <button class="pill" type="button" data-price="500">From $500</button>
-          <button class="pill" type="button" data-price="1500">From $1,500</button>
+
+        <div class="section-head listings-head">
+          <div>
+            <p class="kicker">Listings</p>
+            <h2>Available recordings</h2>
+          </div>
+          <a class="btn btn-ghost" href="license-sample.html">Read the sample license first</a>
         </div>
-        <p class="catalog-meta" id="catalog-meta"></p>
-        <div class="artist-grid" id="catalog-grid"></div>
-        <noscript><p class="lede">Enable JavaScript to load the filterable roster.</p></noscript>
+        <p class="listing-rule">A recording is listed only when it has a 15-second watermarked preview and its license facts are confirmed: exclusivity or licenses left, year recorded, length, BPM/key, price and feat. credit. No clip, no listing.</p>
+        <div class="sku-grid" id="sku-grid" aria-live="polite"></div>
+        <div class="sku-empty" id="sku-empty">
+          <h3>No recordings are listed yet</h3>
+          <p>We’re preparing previews and license details. Until a recording has a preview here, catalog licenses are handled by request.</p>
+          <p><a class="btn" href="request-form.html?product=catalog">Ask about the catalog</a></p>
+        </div>
       </div>
     </section>
 
+    <section class="section tight-top" aria-labelledby="onrequest-h">
+      <div class="wrap">
+        <p class="kicker">Catalog on request</p>
+        <h2 id="onrequest-h" class="h2-sm">Ask about these names</h2>
+        <p class="onrequest-note">These names are associated with recordings we can discuss on request. There are no prices or previews here yet. A name on this list is not an endorsement and does not mean a new verse. Availability, license type and credit terms are confirmed in writing for each recording before you pay.</p>
+        <ul class="onrequest-list" id="onrequest-list"></ul>
+        <noscript><p class="lede">Enable JavaScript to see the list, or call (323) 595-3611.</p></noscript>
+        <p style="margin-top:28px"><a class="btn btn-ghost" href="request-form.html?product=catalog">Ask about a name</a></p>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="wrap foot-grid">
       <div class="foot-brand">
-        <img src="https://i.ibb.co/Xxw5Dj2y/IMG-7140.jpg" width="52" height="52" alt="HW Entertainment logo">
-        <p>Licensed features from 87 named artists — fully cleared, contract-backed.</p>
+        <img src="assets/logo.jpg" width="52" height="52" alt="HW Management logo: HW monogram">
+        <p>HW Entertainment LLC · Los Angeles, CA<br>Founded by Herman Watson.</p>
         <div class="socials">
           <a href="https://www.instagram.com/hw_management/" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.youtube.com/@HermanWatsonHw_Management" target="_blank" rel="noopener">YouTube</a>
@@ -101,43 +113,44 @@
         </div>
       </div>
       <div>
-        <h4>Quick Links</h4>
+        <h4>Products</h4>
         <ul>
-          <li><a href="catalog.html">Artists / Catalog</a></li>
+          <li><a href="catalog.html">Catalog License</a></li>
+          <li><a href="intro-custom.html">Intro / Custom</a></li>
           <li><a href="marketing.html">Marketing</a></li>
           <li><a href="promotion.html">Promotion</a></li>
           <li><a href="billboard.html">Billboard</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="faq.html">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4>Booking</h4>
+        <h4>Contact</h4>
         <ul>
-          <li><a href="request-form.html">Book Now</a></li>
+          <li><a href="request-form.html">Request a Verse</a></li>
           <li><a href="tel:+13235953611">Call (323) 595-3611</a></li>
-          <li><a href="https://wa.me/13235953611" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a href="https://wa.me/13235953611" target="_blank" rel="noopener">WhatsApp (323) 595-3611</a></li>
           <li><a href="mailto:hw_management@yahoo.com">hw_management@yahoo.com</a></li>
-          <li><a href="https://tinyurl.com/HWATSON27" target="_blank" rel="noopener">Inquire (secondary)</a></li>
-          <li class="legal-line">24 hour reply</li>
         </ul>
       </div>
       <div>
-        <h4>Legal / Trust</h4>
-        <p class="legal-line">All features fully licensed &amp; contract-backed.</p>
+        <h4>Buying &amp; Legal</h4>
         <ul>
-          <li><a href="faq.html">Licensing FAQ</a></li>
+          <li><a href="index.html#how">How buying works</a></li>
+          <li><a href="license-sample.html">Sample license structure</a></li>
+          <li><a href="faq.html">FAQ</a></li>
           <li><a href="privacy.html">Privacy</a></li>
           <li><a href="terms.html">Terms</a></li>
+          <li><a href="about.html">About us</a></li>
         </ul>
       </div>
     </div>
     <div class="wrap foot-bottom">
-      <div>© 2026 HW Entertainment LLC · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
-      <p class="disclaimer">All music is exclusively owned by HW Entertainment LLC. All features 100% cleared with contracts &amp; splits upon payment.</p>
+      <div>© 2026 HW Entertainment LLC · Los Angeles, CA · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></div>
+      <p class="disclaimer">Catalog licenses cover existing recordings from our catalog. They are not new sessions and not endorsements by the named artist. Name use and credit are limited to what your signed license states.</p>
     </div>
   </footer>
+  <script src="js/pixel.js"></script>
   <script src="js/artists.js"></script>
+  <script src="js/skus.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
