@@ -421,6 +421,30 @@ body:not(.has-hero) .site-header {
 }
 .bogo strong { color: var(--gold); }
 
+/* BOGO banner image (index.html, under the BOGO strip) */
+.sale-banner { padding: 48px 0 0; }
+.sale-banner-link {
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.sale-banner-link:hover, .sale-banner-link:focus-visible {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+.sale-banner-link:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.sale-banner img { width: 100%; height: auto; }
+@media (max-width: 860px) {
+  .sale-banner { padding-top: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sale-banner-link { transition: none; }
+  .sale-banner-link:hover { transform: none; }
+}
+
 /* Trust */
 .trust {
   padding: 72px 0;
