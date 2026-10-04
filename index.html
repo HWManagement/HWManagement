@@ -25,6 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/credibility.css">
+  <link rel="stylesheet" href="css/redesign.css">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "HW Entertainment LLC", "alternateName": "HW Management", "url": "https://hwmanagement.github.io/HWManagement/", "logo": "https://hwmanagement.github.io/HWManagement/assets/logo.jpg", "email": "hw_management@yahoo.com", "telephone": "+1-323-595-3611", "founder": {"@type": "Person", "name": "Herman Watson", "jobTitle": "Founder & Owner"}, "address": {"@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US"}, "sameAs": ["https://www.instagram.com/hw_management/", "https://www.youtube.com/@HermanWatsonHw_Management", "https://www.tiktok.com/@hwentertainmentllc"]}</script>
 </head>
 <body data-page="home" class="has-hero">
@@ -52,17 +53,36 @@
     </div>
   </header>
   <main id="main">
-    <section class="hero hero-company" aria-label="Introduction">
+    <section class="hero hero-company rd-hero" aria-label="Introduction">
       <canvas class="hero-canvas" id="hero-particles" aria-hidden="true"></canvas>
+      <div class="rd-hero-bg" aria-hidden="true"></div>
       <div class="hero-overlay"></div>
-      <div class="hero-shimmer" aria-hidden="true"></div>
-      <div class="hero-content">
-        <p class="eyebrow">HW Entertainment LLC · Los Angeles</p>
-        <h1>Licensed verses.<br><em>Paperwork up front.</em></h1>
-        <p class="hero-sub">A Los Angeles music company founded by Herman Watson. Hear the recording, read how the license works, then pay. You receive a signed license, a split sheet and the files.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#how">How buying works</a>
-          <a class="btn btn-ghost" href="#products">Compare the two products</a>
+      <div class="rd-glow rd-glow-a" aria-hidden="true"></div>
+      <div class="rd-glow rd-glow-b" aria-hidden="true"></div>
+      <div class="rd-hero-grid">
+        <div class="hero-content rd-hero-copy">
+          <p class="eyebrow">HW Entertainment LLC · Los Angeles</p>
+          <h1><span class="rd-line">Licensed verses.</span><em class="rd-line rd-gold-text">Paperwork up front.</em></h1>
+          <p class="hero-sub">A Los Angeles music company founded by Herman Watson. Hear the recording, read how the license works, then pay. You receive a signed license, a split sheet and the files.</p>
+          <div class="hero-actions">
+            <a class="btn rd-btn-lg" href="request-form.html">Request a Verse <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost rd-btn-lg" href="#how">How buying works</a>
+          </div>
+          <ul class="rd-hero-facts" aria-label="Quick facts">
+            <li><strong>$500</strong><span>Catalog licenses from</span></li>
+            <li><strong>87</strong><span>Names in the catalog</span></li>
+            <li><strong>Signed</strong><span>License, split sheet &amp; files</span></li>
+          </ul>
+        </div>
+        <div class="rd-stage" aria-hidden="true">
+          <div class="rd-record">
+            <div class="rd-record-disc">
+              <div class="rd-record-label"><img src="assets/logo.jpg" alt="" width="120" height="128"></div>
+            </div>
+            <div class="rd-record-sheen"></div>
+          </div>
+          <div class="rd-arm"><span class="rd-arm-base"></span><span class="rd-arm-rod"></span><span class="rd-arm-head"></span></div>
+          <div class="rd-eq"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         </div>
       </div>
       <button class="scroll-chevron" type="button" aria-label="Scroll to products">
@@ -71,10 +91,17 @@
     </section>
 
     <div id="after-hero"></div>
-    <div class="bogo" data-expires="2026-11-02T00:00:00-08:00">
+    <div class="bogo rd-bogo" data-expires="2026-11-02T00:00:00-08:00">
       <div class="bogo-inner">
         <span class="bogo-badge">BOGO</span>
         <p>Catalog License offer: buy one, get one free <strong>through November 1, 2026</strong>. Applies to catalog licenses only; the second license is of equal or lesser price. Ends November 1, 2026.</p>
+        <div class="rd-countdown" data-countdown="2026-11-02T00:00:00-08:00" aria-label="Time left in the BOGO offer" hidden>
+          <span class="rd-cd-label">Ends in</span>
+          <span class="rd-cd-unit"><b data-cd="d">00</b><i>Days</i></span>
+          <span class="rd-cd-unit"><b data-cd="h">00</b><i>Hrs</i></span>
+          <span class="rd-cd-unit"><b data-cd="m">00</b><i>Min</i></span>
+          <span class="rd-cd-unit"><b data-cd="s">00</b><i>Sec</i></span>
+        </div>
       </div>
     </div>
 
@@ -91,73 +118,112 @@
       </div>
     </div>
 
+    <section class="rd-roster" aria-labelledby="roster-h">
+      <div class="wrap rd-roster-head">
+        <div>
+          <p class="kicker">Catalog on request</p>
+          <h2 id="roster-h">87 names. <span class="rd-gold-text">One catalog.</span></h2>
+        </div>
+        <a class="btn btn-ghost" href="catalog.html#onrequest-h">See every name</a>
+      </div>
+      <div class="rd-marquee" data-marquee="0" aria-hidden="true"><div class="rd-marquee-track"></div></div>
+      <div class="rd-marquee rd-marquee-rev" data-marquee="1" aria-hidden="true"><div class="rd-marquee-track"></div></div>
+      <p class="wrap rd-roster-note">These names are associated with recordings we can discuss on request. A name on this list is not an endorsement and does not mean a new verse. Availability, license type and credit terms are confirmed in writing before you pay.</p>
+    </section>
+
     <section class="section" id="products" aria-labelledby="products-h">
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head rd-center-head">
           <div>
-            <p class="kicker">Two products</p>
-            <h2 id="products-h">Pick the one that fits</h2>
+            <p class="kicker">What we do</p>
+            <h2 id="products-h">Records, reach &amp; <span class="rd-gold-text">the big screen</span></h2>
           </div>
         </div>
-        <div class="product-grid">
-          <article class="product-card" id="product-catalog">
-            <p class="kicker">Product 1</p>
+        <div class="rd-services">
+          <article class="rd-svc rd-svc-lg" id="product-catalog">
+            <div class="rd-svc-top">
+              <span class="rd-svc-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="19"/><circle cx="24" cy="24" r="12" opacity=".5"/><circle cx="24" cy="24" r="4"/></svg></span>
+              <p class="kicker">Product 1</p>
+            </div>
             <h3>Catalog License</h3>
             <p class="product-lede">An existing recording from our catalog, licensed for your release. Premade, lower cost, limited credit.</p>
-            <div class="product-price">From $500 <span>released catalog verse</span></div>
-            <div class="product-price small">From $1,500 <span>unreleased catalog verse</span></div>
+            <div class="rd-price-row">
+              <div class="product-price">From $500 <span>released catalog verse</span></div>
+              <div class="product-price small">From $1,500 <span>unreleased catalog verse</span></div>
+            </div>
             <ul class="check-list">
               <li>Listed only with a 15-second watermarked preview. No clip, no listing.</li>
               <li>Each listing says exclusive, or how many licenses are left.</li>
               <li>Each listing says whether a “feat.” credit is allowed.</li>
               <li>Not a new session and not an endorsement by the artist.</li>
             </ul>
-            <a class="btn" href="catalog.html">Catalog License</a>
+            <a class="btn" href="catalog.html">Catalog License <span aria-hidden="true">→</span></a>
           </article>
-          <article class="product-card" id="product-custom">
-            <p class="kicker">Product 2</p>
+          <article class="rd-svc rd-svc-lg" id="product-custom">
+            <div class="rd-svc-top">
+              <span class="rd-svc-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="17" y="6" width="14" height="24" rx="7"/><path d="M11 23a13 13 0 0 0 26 0M24 36v6M17 42h14"/></svg></span>
+              <p class="kicker">Product 2</p>
+            </div>
             <h3>Custom</h3>
             <p class="product-lede">You want something new from a specific artist. We contact the artist’s team on your behalf.</p>
-            <div class="product-price">Quote on request</div>
+            <div class="rd-price-row">
+              <div class="product-price">Quote on request</div>
+            </div>
             <ul class="check-list">
               <li>We reach out to the artist’s management or team for you.</li>
               <li>No guarantee: the artist’s team decides whether to do it, and at what price.</li>
               <li>Anything agreed is documented in a written license.</li>
             </ul>
-            <a class="btn btn-ghost" href="custom.html">Custom</a>
+            <a class="btn btn-ghost" href="custom.html">Custom <span aria-hidden="true">→</span></a>
           </article>
+          <a class="rd-svc rd-svc-photo rd-svc-promo" href="promotion.html">
+            <span class="rd-svc-media" style="background-image:url('assets/instagram/02-stage.jpg')" aria-hidden="true"></span>
+            <div class="rd-svc-body">
+              <span class="rd-svc-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 20v8h7l13 9V11l-13 9H8z"/><path d="M34 17a9 9 0 0 1 0 14M38 12a15 15 0 0 1 0 24" opacity=".6"/></svg></span>
+              <p class="kicker">Campaigns</p>
+              <h3>Promotion</h3>
+              <p>iTunes, YouTube, Spotify playlist and clipping campaigns, quoted on request. Results are not guaranteed.</p>
+              <span class="rd-link">View campaigns <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
+          <a class="rd-svc rd-svc-photo rd-svc-bill" href="billboard.html">
+            <span class="rd-svc-media" style="background-image:url('assets/billboards/sunset-spectacular.jpg')" aria-hidden="true"></span>
+            <div class="rd-svc-body">
+              <span class="rd-svc-icon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="9" width="36" height="22" rx="1"/><path d="M20 31v9M28 31v9M14 40h20"/></svg></span>
+              <p class="kicker">Out-of-home</p>
+              <h3>Billboard</h3>
+              <p>Sunset Strip <strong>$499</strong> and Times Square <strong>$599</strong> for one day, with photo and video documentation of your booking.</p>
+              <span class="rd-link">View boards <span aria-hidden="true">→</span></span>
+            </div>
+          </a>
         </div>
+        <p class="rd-services-more"><a href="marketing.html">Features, promotion and billboards on one page: <span>Marketing overview →</span></a></p>
       </div>
     </section>
 
-    <section class="section tight-top" id="how" aria-labelledby="how-h">
+    <section class="section rd-how" id="how" aria-labelledby="how-h">
       <div class="wrap">
         <div class="section-head">
           <div>
             <p class="kicker">How buying works</p>
-            <h2 id="how-h">Hear it. Read it. Pay. Receive.</h2>
+            <h2 id="how-h">Hear it. Sign it. <span class="rd-gold-text">Drop it.</span></h2>
           </div>
           <a class="btn btn-ghost" href="license-sample.html">Sample license structure</a>
         </div>
-        <ol class="how-steps">
-          <li class="how-step">
-            <span class="n">01</span>
-            <h3>Preview the clip</h3>
-            <p>Every catalog listing has a 15-second watermarked preview, so you hear the actual recording before anything else.</p>
+        <ol class="rd-steps">
+          <li class="rd-step">
+            <span class="rd-step-n">01</span>
+            <h3>Hear it &amp; read it</h3>
+            <p>Every catalog listing has a 15-second watermarked preview, so you hear the actual recording first. Then read how the license is structured: rights, territory, term, exclusivity, name use, splits, and what happens if a distributor removes the release. <a href="license-sample.html">Sample structure</a>.</p>
           </li>
-          <li class="how-step">
-            <span class="n">02</span>
-            <h3>Read the sample license</h3>
-            <p>See how the license is structured: rights, territory, term, exclusivity, name use, splits, and what happens if a distributor removes the release. <a href="license-sample.html">Sample structure</a>.</p>
-          </li>
-          <li class="how-step">
-            <span class="n">03</span>
+          <li class="rd-step">
+            <span class="rd-step-n">02</span>
             <h3>Confirm, then pay</h3>
             <p>We confirm the recording, license type and credit terms with you directly. There is no online checkout on this site; payment is arranged directly with HW Entertainment LLC.</p>
           </li>
-          <li class="how-step">
-            <span class="n">04</span>
-            <h3>Receive your paperwork and files</h3>
+          <li class="rd-step">
+            <span class="rd-step-n">03</span>
+            <h3>Receive paperwork &amp; files</h3>
             <p>Your signed license agreement, the split sheet, and the audio files (stems where your license includes them).</p>
           </li>
         </ol>
@@ -165,63 +231,43 @@
       </div>
     </section>
 
-    <section class="section tight-top" aria-labelledby="who-h">
-      <div class="wrap who-band">
-        <div>
+    <section class="section rd-founder-wrap" aria-labelledby="who-h">
+      <div class="wrap rd-founder">
+        <div class="rd-founder-mark" aria-hidden="true">
+          <div class="rd-founder-ring"><img src="assets/logo.jpg" alt="" width="200" height="213"></div>
+        </div>
+        <div class="rd-founder-copy">
           <p class="kicker">Who we are</p>
           <h2 id="who-h">Herman Watson, founder</h2>
           <p class="lede">HW Entertainment LLC / HW Management is run by Herman Watson, a music industry operator and former manager of Rappin’ 4-Tay. We’re in Los Angeles. Call or WhatsApp and you reach us directly.</p>
-          <p class="who-links"><a class="btn btn-ghost" href="about.html">About us</a></p>
-        </div>
-        <div class="ads-contact">
-            <a class="ads-phone" href="tel:+13235953611">Call (323) 595-3611</a>
-            <div class="ads-contact-row">
-              <a class="btn btn-wa" href="https://wa.me/13235953611" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="ads-email" href="mailto:hw_management@yahoo.com">hw_management@yahoo.com</a>
-            </div>
-            <p class="ads-socials">
-              <a href="https://www.instagram.com/hw_management/" target="_blank" rel="noopener">Instagram</a>
-              ·
-              <a href="https://www.youtube.com/@HermanWatsonHw_Management" target="_blank" rel="noopener">YouTube</a>
-              ·
-              <a href="https://www.tiktok.com/@hwentertainmentllc" target="_blank" rel="noopener">TikTok</a>
-            </p>
+          <div class="rd-contact-row">
+            <a class="rd-contact" href="tel:+13235953611"><span>Call</span>(323) 595-3611</a>
+            <a class="rd-contact rd-contact-wa" href="https://wa.me/13235953611" target="_blank" rel="noopener"><span>WhatsApp</span>(323) 595-3611</a>
+            <a class="rd-contact" href="mailto:hw_management@yahoo.com"><span>Email</span>hw_management@yahoo.com</a>
           </div>
-      </div>
-    </section>
-
-    <section class="section tight-top" aria-label="Other services">
-      <div class="wrap teaser-row three">
-        <a class="teaser feat" href="marketing.html">
-          <p class="kicker">Overview</p>
-          <h3>Marketing</h3>
-          <p>Features, promotion campaigns and billboard bookings on one page.</p>
-          <span class="btn btn-ghost">View Marketing</span>
-        </a>
-        <a class="teaser promo" href="promotion.html">
-          <p class="kicker">Campaigns</p>
-          <h3>Promotion</h3>
-          <p>iTunes, YouTube, Spotify playlist and clipping campaigns, quoted on request. Results are not guaranteed.</p>
-          <span class="btn btn-ghost">View Campaigns</span>
-        </a>
-        <a class="teaser bill" href="billboard.html">
-          <p class="kicker">Out-of-home</p>
-          <h3>Billboard</h3>
-          <p>Sunset Strip $499 and Times Square $599 for one day, with photo and video documentation of your booking.</p>
-          <span class="btn btn-ghost">View Boards</span>
-        </a>
-      </div>
-    </section>
-
-    <div class="wrap">
-      <div class="cta-band">
-        <div>
-          <p class="kicker">Questions first?</p>
-          <h2>Read the FAQ, or just ask.</h2>
+          <p class="rd-founder-links">
+            <a class="btn btn-ghost" href="about.html">About us</a>
+            <a href="https://www.instagram.com/hw_management/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.youtube.com/@HermanWatsonHw_Management" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@hwentertainmentllc" target="_blank" rel="noopener">TikTok</a>
+          </p>
         </div>
-        <p class="cta-actions"><a class="btn btn-ghost" href="faq.html">FAQ</a> <a class="btn" href="request-form.html">Request a Verse</a></p>
       </div>
-    </div>
+    </section>
+
+    <section class="rd-final" aria-labelledby="final-h">
+      <div class="rd-final-bg" aria-hidden="true"></div>
+      <div class="wrap rd-final-inner">
+        <p class="kicker">Questions first?</p>
+        <h2 id="final-h">Put a verse on <span class="rd-gold-text">your record.</span></h2>
+        <p class="rd-final-sub">Read the FAQ, or just ask. Call or WhatsApp and you reach us directly.</p>
+        <p class="cta-actions">
+          <a class="btn rd-btn-lg" href="request-form.html">Request a Verse <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost rd-btn-lg" href="https://wa.me/13235953611" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost rd-btn-lg" href="faq.html">FAQ</a>
+        </p>
+      </div>
+    </section>
   </main>
   <footer class="site-footer">
     <div class="wrap foot-grid">
@@ -274,5 +320,6 @@
   <script src="js/artists.js"></script>
   <script src="js/skus.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/redesign.js"></script>
 </body>
 </html>
