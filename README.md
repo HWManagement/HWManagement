@@ -12,11 +12,11 @@ python3 -m http.server 8080
 
 Then open [http://localhost:8080](http://localhost:8080). `index.html` is at the site root.
 
-Any static server works (`npx serve`, GitHub Pages, Netlify). Do not open files via `file://` if you want Formspree redirects and fetch-free routing to behave normally; the pages themselves are plain HTML/CSS/JS.
+Any static server works (`npx serve`, Netlify, or any static host). Do not open files via `file://` if you want Formspree redirects and fetch-free routing to behave normally; the pages themselves are plain HTML/CSS/JS.
 
-## GitHub Pages
+## Live site
 
-The intended live path is `/HWManagement/` (for example `https://hwmanagement.github.io/HWManagement/`). All internal links, assets, and scripts are **relative** (not `/`-rooted), so the site works from a domain root and from that subpath.
+The live site is served at `https://www.hwentertainment.com/` (the `CNAME` file sets the custom domain). All internal links, assets, and scripts are **relative** (not `/`-rooted), so the site works from the domain root or from any subfolder.
 
 ## Form
 
