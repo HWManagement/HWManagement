@@ -1796,3 +1796,7 @@ body:not(.has-hero) .site-header {
   .ads-contact-row { flex-direction: column; align-items: stretch; }
   .ads-contact .btn { width: 100%; }
 }
+
+/* Portrait BOGO artwork (Jan 2027 refresh): keep it a readable size on wide screens */
+.sale-banner-link { max-width: 540px; margin: 0 auto; }
+.sale-banner-link img { display: block; width: 100%; height: auto; }
